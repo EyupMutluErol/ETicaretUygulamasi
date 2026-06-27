@@ -21,6 +21,7 @@ public class ETicaretAPIDbContext : DbContext
             {
                 EntityState.Added => data.Entity.CreatedDate = DateTime.UtcNow,
                 EntityState.Modified => data.Entity.UpdatedDate = DateTime.UtcNow,
+                _ => DateTime.UtcNow
             };
         }
         return await base.SaveChangesAsync(cancellationToken);
