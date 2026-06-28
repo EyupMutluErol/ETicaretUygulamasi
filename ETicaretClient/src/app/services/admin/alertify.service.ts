@@ -8,9 +8,9 @@ export class AlertifyService {
   constructor() { }
 
   message(message: string,options:Partial<AlertifyOptions>) {
-    alertify[options.messageType](message);
+    alertify.set('notifier','delay',options.delay);
     alertify.set('notifier', 'position', options.position);
-    const msj = alertify.set('notifier', 'delay', options.delay);
+    const msj = alertify[options.messageType](message);
     if (options.dismissOthers)
       msj.dismissOthers();
   }

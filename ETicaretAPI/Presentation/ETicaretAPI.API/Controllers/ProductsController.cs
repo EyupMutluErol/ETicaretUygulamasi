@@ -6,6 +6,8 @@ using System.Net;
 
 namespace ETicaretAPI.API.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class ProductsController : Controller
     {
         private readonly IProductWriteRepository _productWriteRepository;
